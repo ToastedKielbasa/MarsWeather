@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/tyler/Desktop/CS124/Weather On Mars/Weather.h
+fstream
+-
+iomanip
+-
+string
+-
+vector
+-
+
+C:/Users/tyler/Desktop/CS124/Weather On Mars/main.cpp
+Weather.h
+C:/Users/tyler/Desktop/CS124/Weather On Mars/Weather.h
+iostream
+-
+fstream
+-
+vector
+-
+
