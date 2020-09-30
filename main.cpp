@@ -98,10 +98,11 @@ int main() {
     intQueue.enqueue(26);
     intQueue.printQueue();
     cout << boolalpha;
-    cout << "\n" << "Is 14 in queue? " << intQueue.isInQueue(14) << endl;
-    cout << "Is 47 in queue? " << intQueue.isInQueue(47) << endl;
-    cout << "Is 9 in queue? " << intQueue.isInQueue(9) << endl;
-    cout << "Is 45 in queue? " << intQueue.isInQueue(45) << endl;
+    cout << "\n" << "Is 9 in queue? " << intQueue.isInQueue(9) << endl;
+    intQueue.dequeue();
+    cout << "\n" << "Dequeue called, should remove first Node (9): " << endl;
+    intQueue.printQueue();
+    cout << "\n" << "Is 9 in queue? " << intQueue.isInQueue(9) << endl;
 
 
 
@@ -111,6 +112,11 @@ int main() {
     stringQueue.enqueue("Three");
     stringQueue.enqueue("Four");
     stringQueue.printQueue();
+    cout << "\n" << "Is ""One"" in queue? " << stringQueue.isInQueue("One") << endl;
+    stringQueue.dequeue();
+    cout << "\n" << "Dequeue called, should remove first Node (One): " << endl;
+    stringQueue.printQueue();
+    cout << "\n" << "Is ""One"" in queue? " << stringQueue.isInQueue("One") << endl;
 
     //Queue<MarsWeather> vectorQueue;
     //vectorQueue.enqueue(weather[0]);
