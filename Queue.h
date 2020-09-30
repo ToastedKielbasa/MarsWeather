@@ -50,8 +50,8 @@ public:
             last = newNode;
         }
 
-        // Delete Node in heap to stop memory leak
-        delete newNode;
+        // Delete Node in heap to stop memory leak (This makes queue unable to take in MarsWeather type)
+        //delete newNode;
 
     }
 

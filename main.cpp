@@ -112,22 +112,24 @@ int main() {
     stringQueue.enqueue("Three");
     stringQueue.enqueue("Four");
     stringQueue.printQueue();
-    cout << "\n" << "Is ""One"" in queue? " << stringQueue.isInQueue("One") << endl;
+    cout << "\n" << "Is One in queue? " << stringQueue.isInQueue("One") << endl;
     stringQueue.dequeue();
     cout << "\n" << "Dequeue called, should remove first Node (One): " << endl;
     stringQueue.printQueue();
-    cout << "\n" << "Is ""One"" in queue? " << stringQueue.isInQueue("One") << endl;
-
-    //Queue<MarsWeather> vectorQueue;
-    //vectorQueue.enqueue(weather[0]);
-    //vectorQueue.printQueue();
+    cout << "\n" << "Is One in queue? " << stringQueue.isInQueue("One") << endl;
 
     Stack<MarsWeather> vectorStack;
     for (int i = 0; i < row_size; ++i) {
         vectorStack.push(weather[i]);
     }
-    vectorStack.pop();
+    //vectorStack.pop();
     vectorStack.printStack();
+
+    Queue<MarsWeather> vectorQueue;
+    for (int i = 0; i < row_size; ++i) {
+        vectorQueue.enqueue(weather[i]);
+    }
+    vectorQueue.printQueue();
 
 
     return 0;
