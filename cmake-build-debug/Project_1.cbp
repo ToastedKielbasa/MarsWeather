@@ -80,6 +80,15 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/tyler/Desktop/CS124/Weather On Mars/Node.h">
+			<Option target="Project_1"/>
+		</Unit>
+		<Unit filename="C:/Users/tyler/Desktop/CS124/Weather On Mars/Queue.h">
+			<Option target="Project_1"/>
+		</Unit>
+		<Unit filename="C:/Users/tyler/Desktop/CS124/Weather On Mars/Stack.h">
+			<Option target="Project_1"/>
+		</Unit>
 		<Unit filename="C:/Users/tyler/Desktop/CS124/Weather On Mars/Weather.h">
 			<Option target="Project_1"/>
 		</Unit>

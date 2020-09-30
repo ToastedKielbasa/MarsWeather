@@ -201,7 +201,7 @@ void getWeather(std::string filename, std::vector<MarsWeather> &weather) {
     // Reads file and adds to vector
     while(fIn && fIn.peek() != EOF) {
 
-        fIn >> id >> comma;
+        fIn >> id;
         if (!fIn) {
             id = 0;
             fIn.clear();
