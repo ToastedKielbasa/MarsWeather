@@ -77,6 +77,7 @@ public:
             std::cout << curr->getItem() << std::endl;
             curr = curr->getNext();
         }
+
         std::cout << "End of Stack" << std::endl;
     }
 

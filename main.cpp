@@ -80,17 +80,6 @@ int main() {
     // Populate vector with content from file
     getWeather("mars-weather.csv", weather);
 
-
-    // Show vector
-   // displayVectorContents(weather);
-
-    // Displays the average maximum temperature
-    //averageMax(weather, weather.size());
-    //averageMin(weather, weather.size());
-
-    // Displays vector size
-    //cout << "\n" << "Size of Vector: " << weather.size() << endl;
-
     Queue<int> intQueue;
     intQueue.enqueue(9);
     intQueue.enqueue(14);
@@ -118,19 +107,33 @@ int main() {
     stringQueue.printQueue();
     cout << "\n" << "Is One in queue? " << stringQueue.isInQueue("One") << endl;
 
-    Stack<MarsWeather> vectorStack;
-    for (int i = 0; i < row_size; ++i) {
-        vectorStack.push(weather[i]);
-    }
-    //vectorStack.pop();
-    vectorStack.printStack();
-
+    // Queue implementation
     Queue<MarsWeather> vectorQueue;
     for (int i = 0; i < row_size; ++i) {
         vectorQueue.enqueue(weather[i]);
     }
+    cout << "\n" << "Furthest left column is in descending order in CSV. Queue retains original order (FIFO) by appending elements to the last Node" << endl;
     vectorQueue.printQueue();
 
+    cout << "\n" << "Dequeue all elements out of queue, now empty" << endl;
+    for(int i = 0; i < row_size; ++i) {
+        vectorQueue.dequeue();
+    }
+    vectorQueue.printQueue();
+
+    // Stack implementation
+    Stack<MarsWeather> vectorStack;
+    for (int i = 0; i < row_size; ++i) {
+        vectorStack.push(weather[i]);
+    }
+    cout << "\n" << "Furthest left column is in descending order in CSV. Stack reverses original order (LIFO) by appending elements to the first Node" << endl;
+    vectorStack.printStack();
+
+    cout << "\n" << "Pop all elements out of stack, now empty" << endl;
+    for(int i = 0; i < row_size; ++i) {
+        vectorStack.pop();
+    }
+    vectorStack.printStack();
 
     return 0;
 }
