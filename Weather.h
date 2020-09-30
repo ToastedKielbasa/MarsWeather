@@ -270,7 +270,7 @@ void getWeather(std::string filename, std::vector<MarsWeather> &weather) {
         weather.push_back(MarsWeather(id, t_date, sol, ls,
                                       month, min_temp, max_temp,
                                       pressure, wind_speed, atmo));
-    // Test
+
     }
 
     fIn.close();

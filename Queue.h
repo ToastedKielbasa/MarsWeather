@@ -37,33 +37,32 @@ public:
 
     void enqueue(Object item) {
 
-        Node<Object>* newNode = new Node<Object>(item);
-
-        if (last != nullptr) {
-            last->setNext(newNode);
-
-        }
-
-        last = newNode;
+        // Store Node in heap memory via "new" keyword
+        Node<Object> *newNode = new Node<Object>(item);
 
         if (first == nullptr) {
             first = newNode;
+            last = newNode;
         }
 
+        else {
+            last->setNext(newNode);
+            last = newNode;
+        }
 
-
-        //else {
-        //    last = newNode;
-        //}
+        // Delete Node in heap to stop memory leak
+        delete newNode;
 
     }
 
     Object dequeue() {
 
-        //
+        // Create Object type to add contents of first Node in queue
         Object removed = first->getItem();
+
         // Move second node ot first position
         first = first->getNext();
+
         // When first is null, list is empty so change last to null
         if (first == nullptr) {
             last = nullptr;
@@ -74,14 +73,14 @@ public:
     }
 
     void printQueue() {
-        std::cout << "Beginning of Stack" << std::endl;
-        // Make a copy of top
+        std::cout << "\n" << "Beginning of Queue" << std::endl;
         Node<Object>* curr = first;
         while (curr != nullptr) {
             std::cout << curr->getItem() << std::endl;
             curr = curr->getNext();
         }
-        std::cout << "End of Stack" << std::endl;
+        std::cout << "End of Queue" << std::endl;
+        delete curr;
     }
 
     bool isInQueue(Object item) {
@@ -97,7 +96,9 @@ public:
             curr = curr->getNext();
         }
 
+        delete curr;
         return false;
+
     }
 };
 

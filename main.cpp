@@ -72,7 +72,7 @@ void averageMin(vector<MarsWeather> &weather, int vectorSize) {
 
 int main() {
 
-    const int row_size = 9;
+    int const row_size = 10;
 
     // Create vector object
     vector<MarsWeather> weather;
@@ -85,34 +85,44 @@ int main() {
    // displayVectorContents(weather);
 
     // Displays the average maximum temperature
-    averageMax(weather, weather.size());
-    averageMin(weather, weather.size());
+    //averageMax(weather, weather.size());
+    //averageMin(weather, weather.size());
 
     // Displays vector size
-    cout << "\n" << "Size of Vector: " << weather.size() << endl;
-
-
-    //Stack<vector<MarsWeather>> weather_stack;;
-
-    //for (int i = 0; i < row_size; ++i) {
-    //    weather_stack.push(weather[i]);
-    //    weather_stack.printStack();
-    //}
+    //cout << "\n" << "Size of Vector: " << weather.size() << endl;
 
     Queue<int> intQueue;
     intQueue.enqueue(9);
     intQueue.enqueue(14);
     intQueue.enqueue(47);
-    intQueue.dequeue();
+    intQueue.enqueue(26);
     intQueue.printQueue();
     cout << boolalpha;
-    cout << "Is 14 in queue? " << intQueue.isInQueue(14) << endl;
+    cout << "\n" << "Is 14 in queue? " << intQueue.isInQueue(14) << endl;
     cout << "Is 47 in queue? " << intQueue.isInQueue(47) << endl;
     cout << "Is 9 in queue? " << intQueue.isInQueue(9) << endl;
     cout << "Is 45 in queue? " << intQueue.isInQueue(45) << endl;
-    //cout << "Is 9 in queue? " << intQueue.isInQueue(65) << endl;
-    //cout << "Is 13 in queue? " << intQueue.isInQueue(13) << endl;
-    //cout << "Is 84 in queue? " << intQueue.isInQueue(84) << endl;
+
+
+
+    Queue<string> stringQueue;
+    stringQueue.enqueue("One");
+    stringQueue.enqueue("Two");
+    stringQueue.enqueue("Three");
+    stringQueue.enqueue("Four");
+    stringQueue.printQueue();
+
+    //Queue<MarsWeather> vectorQueue;
+    //vectorQueue.enqueue(weather[0]);
+    //vectorQueue.printQueue();
+
+    Stack<MarsWeather> vectorStack;
+    for (int i = 0; i < row_size; ++i) {
+        vectorStack.push(weather[i]);
+    }
+    vectorStack.pop();
+    vectorStack.printStack();
+
 
     return 0;
 }

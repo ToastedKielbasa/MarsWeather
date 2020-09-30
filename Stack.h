@@ -69,7 +69,7 @@ public:
     }
 
     void printStack() {
-        std::cout << "Beginning of Stack" << std::endl;
+        std::cout << "\n" << "Beginning of Stack" << std::endl;
         // Make a copy of top
         Node<Object>* curr = top;
         // Iterate through the Stack from top to bottom
