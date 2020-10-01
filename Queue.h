@@ -1,6 +1,11 @@
-//
-// Created by tyler on 9/25/2020.
-//
+/*
+    Tyler Scott
+    Mars Weather (Project 1)
+    *****************************
+    Queue class
+    - Methods for adding, removing, searching, and printing contents of a queue
+
+*/
 
 #ifndef PROJECT_1_WEATHERQUEUE_H
 #define PROJECT_1_WEATHERQUEUE_H
@@ -35,6 +40,10 @@ public:
         }
     }
 
+    /**
+        Adds new elements to queue
+        @param item Element to be added
+     */
     void enqueue(Object item) {
 
         // Store Node in heap memory via "new" keyword
@@ -50,15 +59,19 @@ public:
             last = newNode;
         }
 
-        // Delete Node in heap to stop memory leak (This makes queue unable to take in MarsWeather type)
+        // Delete Node in heap to stop memory leak (This makes queue unable to take in MarsWeather type?)
         //delete newNode;
 
     }
 
+    /**
+        Removes item from queue
+        @return The new first item
+     */
     Object dequeue() {
 
         // Create Object type to add contents of first Node in queue
-        Object removed = first->getItem();
+        Object newFirst = first->getItem();
 
         // Move second node ot first position
         first = first->getNext();
@@ -68,29 +81,39 @@ public:
             last = nullptr;
         }
 
-        return removed;
+        return newFirst;
 
     }
 
+    /**
+       Prints all contents in queue
+     */
     void printQueue() {
+
         std::cout << "\n" << "Beginning of Queue" << std::endl;
+
         Node<Object>* curr = first;
+
         while (curr != nullptr) {
             std::cout << curr->getItem() << std::endl;
             curr = curr->getNext();
         }
+
         std::cout << "End of Queue" << std::endl;
         delete curr;
     }
 
+    /**
+       Searches through queue to find specific item
+       @param item The item to be searched for
+       @return
+     */
     bool isInQueue(Object item) {
 
         Node<Object>* curr = first;
 
         while (curr != nullptr) {
-            // This will require you to overload the == operator
             if (curr->getItem() == item) {
-
                 return true;
             }
             curr = curr->getNext();
@@ -98,7 +121,6 @@ public:
 
         delete curr;
         return false;
-
     }
 };
 

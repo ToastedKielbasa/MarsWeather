@@ -3,9 +3,8 @@
     Mars Weather (Project 1)
     *****************************
     Main
-    - Takes in Objects and methods from Weather.h
-    - Creates vector of data received
-    - Applies functions that calculates the average maximum and minimum temperatures
+    - Implements a queue data structure on different data types
+    - Prints each to console
 */
 
 #include "Node.h"
@@ -72,7 +71,8 @@ void averageMin(vector<MarsWeather> &weather, int vectorSize) {
 
 int main() {
 
-    int const row_size = 10;
+    // Variable for number of rows of vector to loop through
+    int const row_num = 10;
 
     // Create vector object
     vector<MarsWeather> weather;
@@ -80,6 +80,7 @@ int main() {
     // Populate vector with content from file
     getWeather("mars-weather.csv", weather);
 
+    // Queue of integers
     Queue<int> intQueue;
     intQueue.enqueue(9);
     intQueue.enqueue(14);
@@ -93,8 +94,7 @@ int main() {
     intQueue.printQueue();
     cout << "\n" << "Is 9 in queue? " << intQueue.isInQueue(9) << endl;
 
-
-
+    // Queue of strings
     Queue<string> stringQueue;
     stringQueue.enqueue("One");
     stringQueue.enqueue("Two");
@@ -109,28 +109,28 @@ int main() {
 
     // Queue implementation
     Queue<MarsWeather> vectorQueue;
-    for (int i = 0; i < row_size; ++i) {
+    for (int i = 0; i < row_num; ++i) {
         vectorQueue.enqueue(weather[i]);
     }
     cout << "\n" << "Furthest left column is in descending order in CSV. Queue retains original order (FIFO) by appending elements to the last Node" << endl;
     vectorQueue.printQueue();
 
     cout << "\n" << "Dequeue all elements out of queue, now empty" << endl;
-    for(int i = 0; i < row_size; ++i) {
+    for(int i = 0; i < row_num; ++i) {
         vectorQueue.dequeue();
     }
     vectorQueue.printQueue();
 
     // Stack implementation
     Stack<MarsWeather> vectorStack;
-    for (int i = 0; i < row_size; ++i) {
+    for (int i = 0; i < row_num; ++i) {
         vectorStack.push(weather[i]);
     }
     cout << "\n" << "Furthest left column is in descending order in CSV. Stack reverses original order (LIFO) by appending elements to the first Node" << endl;
     vectorStack.printStack();
 
     cout << "\n" << "Pop all elements out of stack, now empty" << endl;
-    for(int i = 0; i < row_size; ++i) {
+    for(int i = 0; i < row_num; ++i) {
         vectorStack.pop();
     }
     vectorStack.printStack();
